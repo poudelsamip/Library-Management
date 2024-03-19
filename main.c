@@ -198,15 +198,20 @@ void returnBook(lib book[],int* num){
 
     if(checkBook(book, num, borrow)) {
         for(int i=0;i<*num;i++){
-            if(strcmp(borrow,book[i].title)==0){
+            if(strcmp(borrow,book[i].title)==0 && book[i].isBorrowed){
                 book[i].isBorrowed = false;
                 printf("\n%s returned by %s\n", book[i].title,book[i].borrowersName);
                 strcpy(book[i].borrowersName,"");
                 return;
             }
+            else{
+                printf("\nThis book was not borrowed from here\n");
+            }
         }
     }
     else{
-        printf("\nThis book was not borrowed\n");
+        printf("\nThis book is not available library\n");
+
+        return;
     }
 }
