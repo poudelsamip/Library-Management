@@ -1,3 +1,7 @@
+// this is a library management system in c programming.
+// this program doesnot store data in any file.
+// file handling can be used to store data in txt file.
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
